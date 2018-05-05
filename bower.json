@@ -1,0 +1,52 @@
+{
+  "name": "project-plugins",
+  "description": "",
+  "main": "",
+  "authors": [
+    "maiquocqui"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/baonguyenyam/concu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bricklayer": "^0.4.3",
+    "counter-up": "^1.0.0",
+    "fullpage.js": "^2.9.2",
+    "HoverEffectIdeas": "*",
+    "jquery-mousewheel": "~3.1.3",
+    "k-sass-core": "^3.0.0",
+    "owl.carousel": "^2.1.6",
+    "page-scroll-to-id": "^1.5.5",
+    "slick-carousel": "^1.6.0",
+    "slick": "*",
+    "waypoints": "^4.0.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.1.1",
+    "bootstrap-datepicker": "^1.8.0",
+    "fancybox": "^3.3.5",
+    "jquery.countdown": "^2.2.0",
+    "wow": "^1.1.2",
+    "ScrollToFixed": "^1.0.8",
+    "jquery-bar-rating": "^1.2.2",
+    "scrollup": "^2.4.1",
+    "parallax.js": "^1.5.0",
+    "responsive-tabs": "^1.6.3",
+    "hover": "^2.3.1",
+    "animate.css": "^3.5.2",
+    "fontawesome": "^5.0.12",
+    "linearicons": "^1.0.1",
+    "k-flex": "^1.0.2",
+    "jquery": "^3.3.1"
+  },
+  "keywords": [
+    "plugins"
+  ],
+  "private": true
+}

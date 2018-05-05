@@ -1,0 +1,41 @@
+body.modal-open
+	padding-right: 0 !important
+	overflow: hidden
+	.modal
+		&::-webkit-scrollbar-track
+		&::-webkit-scrollbar
+			width: 0
+		&::-webkit-scrollbar-thumb
+.modal
+	padding-right: 0 !important
+	.modal-dialog
+		margin: 100px auto
+		max-width: 1000px
+		.modal-content
+			+bor-rad(0)
+			border: none
+			box-shadow: 0px 10px 30px color-rgba($black,0.2)
+			.modal-header
+				+bor-rad(0)
+				+pos(rel,null)
+				padding: 0
+				border: none
+				// background: darken($white,3%)
+				background: $orange
+				.modal-title
+					+fs(18rem)
+					font-weight: 700
+					color: $white
+					padding: 10px 20px
+				.close
+					+pos(abs, 10px 15px null null)
+					z-index: 5
+					color: $white
+					text-shadow: none
+					cursor: pointer
+					opacity: 1
+					&:hover
+						opacity: 1
+			.modal-body
+				background: $white
+				padding: 20px

@@ -1,0 +1,191 @@
+.bs-tooltip-left .arrow, .bs-tooltip-auto[x-placement^="left"] .arrow
+	&:before
+		// border-left-color: color-rgba($lime,0.7)
+		border-left-color: $lime
+.bs-tooltip-right .arrow, .bs-tooltip-auto[x-placement^="right"] .arrow
+	&:before
+		border-right-color: $lime
+.tooltip-inner
+	background: color-rgba($lime,0.7)
+	border: 2px solid $lime
+	font-weight: 500
+	color: color-rgba($main,0.8)
+	padding: 0.2rem 1rem
+
+// BUTTON
+.btn
+	+fs(14rem)
+	text-transform: uppercase
+	font-weight: 500
+	padding: 8px 25px
+	+bor-rad(5px)
+	+transition(all,0.5s)
+	&.big
+		padding: 12px 50px
+		+fs(15rem)
+		font-weight: 500
+	&.btn-primary
+		background: $blue
+		border-color: $blue
+		+media-breakpoint-down(xs)
+			+fs(14rem)
+			font-weight: 600
+			width: 100%
+			text-align: center
+			padding: 12px 20px
+		&:hover, &:active:focus
+			filter: brightness(120%)
+			box-shadow: 0px 10px 20px -10px $blue
+	&.btn-white
+		background: $white
+		border-color: $white
+		color: $blue
+		+media-breakpoint-down(xs)
+			+fs(14rem)
+			font-weight: 600
+			width: 100%
+			text-align: center
+			padding: 12px 20px
+		&:hover, &:active:focus
+			border-color: $pink
+			background: $pink
+			color: $white
+			box-shadow: 0px 10px 20px -10px $pink
+
+
+
+// FORM
+
+.form-wrap
+	.form-group
+		// +flexbox
+		// flex-wrap: wrap
+		// align-items: center
+		// align-content: center
+		margin-bottom: 10px
+	.form-row
+	label
+		+fs(14rem)
+		width: 100%
+		margin-bottom: 3px
+	input, textarea
+		width: 100%
+		border: 1px solid darken($white,10%)
+		// border: none
+		// border-bottom: 1px solid darken($white,10%)
+		+fs(14rem)
+		+bor-rad(3px)
+		padding: 7px 15px
+		@extend .form-control
+		&.datepicker
+			padding: 7px 15px
+			+bor-rad(3px)
+			direction: unset
+		&:focus
+			box-shadow: 0 0 0 0.2rem color-rgba($orange,0.25)
+			border-color: lighten($orange,10%)
+	ul
+		+flexbox
+		li
+			+ li
+				margin-left: 15px
+	input[type="submit"]
+		background: $orange
+		color: $white
+		display: inline-block
+		width: auto
+		line-height: 40px
+		+bor-rad(3px)
+		border: none
+		padding: 0px 30px
+		+transition(all,0.5s)
+		&:hover
+			background: darken($orange,10%)
+
+// FORM COMPONENTS
+
+.checkbox
+	input
+		display: none
+		+ label
+			color: darken($white,60%)
+			padding: 0 0 0 25px
+			+pos(rel,null)
+			&:hover
+				color: $orange
+			&:before
+				content: ''
+				display: block
+				width: 16px
+				height: 16px
+				+bor-rad(3px)
+				border: 1px solid darken($white,10%)
+				+pos(abs, 3px null null 0)
+			&:after
+				content: '\f00c'
+				font-family: 'fontawesome'
+				+flexbox
+				justify-content: center
+				align-items: center
+				align-content: center
+				width: 16px
+				height: 16px
+				+fs(12rem)
+				+bor-rad(3px)
+				color: $white
+				background: $green
+				border-color: $green
+				+pos(abs, 3px null null 0)
+				z-index: 1
+				+transition(all,0.5s)
+				opacity: 0
+		&:checked
+			+ label
+				color: $main
+				&:after
+					opacity: 1
+.radio
+	input[type="radio"]
+		display: none
+		+ label
+			padding: 0 0 0 25px
+			+pos(rel,null)
+			+transition(all,0.3s)
+			&:hover
+				color: $orange
+			&:before
+				content: ''
+				display: block
+				width: 16px
+				height: 16px
+				+bor-rad(50px)
+				+pos(abs, 4px null null 0)
+				border: 2px solid darken($white,60%)
+			&:after
+				content: ''
+				display: block
+				width: 12px
+				height: 12px
+				background: darken($white,60%)
+				border: 3px solid $white
+				+pos(abs, 6px null null 2px)
+				+bor-rad(50px)
+				opacity: 0
+				+transition(all,0.3s)
+		&:checked
+			+ label
+				&:after
+					opacity: 1
+.file
+	input[type="file"]
+		display: none
+	label
+		&:hover
+			color: $black
+label
+	a
+		color: $blue
+		text-decoration: underline
+		&:hover
+			color: $purple
+			text-decoration: underline

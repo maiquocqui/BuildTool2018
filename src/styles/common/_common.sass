@@ -1,0 +1,572 @@
+.fancybox-enabled
+	overflow: auto
+// FANCYBOX
+#__bs_notify__
+	top: 50% !important
+	left: 50% !important
+	right: unset !important
+	bottom: unset !important
+	+transform(translateX(-50%)translateY(-50%))
+	+bor-rad(5px)
+.fancybox-bg
+.fancybox-is-open
+	.fancybox-bg
+.fancybox-button--close
+.fancybox-slide
+	overflow: unset
+	>*
+		overflow: unset
+.fancybox-close-small
+	width: unset
+	height: unset
+	top: -15px
+	right: -15px
+	+media-breakpoint-down(sm)
+		top: 5px
+		right: 5px
+	&:after
+		background: darken($white,10%)
+		color: $main
+		content: '✕'
+		+fs(18rem)
+		width: 36px
+		height: 36px
+		line-height: 36px
+		+bor-rad(50px)
+		display: block
+		+pos(static,unset)
+		+media-breakpoint-down(sm)
+			+fs(16rem)
+			width: 30px
+			height: 30px
+			line-height: 30px
+	&:hover
+		&:after
+			background: lighten($red,45%)
+			color: $red
+
+
+.popup-sizechart
+	+transform(scale3d(0.5,0.5,0.5))
+	+transition(all,0.5s)
+	width: 800px
+	+media-breakpoint-down(md)
+		width: 700px
+	.popup-title
+		+fs(28rem)
+		font-weight: 300
+		text-transform: uppercase
+		margin-bottom: 20px
+		+media-breakpoint-down(md)
+			+fs(24rem)
+			margin-bottom: 15px
+	.des
+		+fs(14rem)
+		color: darken($white,40%)
+		margin-bottom: 25px
+		+media-breakpoint-down(md)
+			+fs(13rem)
+			font-weight: 300
+			margin-bottom: 15px
+	.option-group
+		margin-bottom: 30px
+		+media-breakpoint-down(md)
+			margin-bottom: 20px
+		.module-title
+			+fs(13rem)
+			font-weight: 700
+			color: $main
+			border-bottom: 1px solid $main
+			margin-bottom: 20px
+			+media-breakpoint-down(md)
+				margin-bottom: 15px
+		.form-group
+			margin-bottom: 15px
+			+media-breakpoint-down(md)
+				margin-bottom: 10px
+			label
+				display: inline-block
+				vertical-align: middle
+				font-weight: 300
+				+fs(13rem)
+				margin-right: 15px
+				text-transform: uppercase
+				+media-breakpoint-down(md)
+					+fs(12rem)
+					margin-right: 10px
+			select, input 
+				display: inline-block
+				vertical-align: middle
+				width: 40px
+				+fs(13rem)
+				padding: 3px 5px
+				border: 1px solid darken($white,10%)
+				+bor-rad(3px)
+			input[type="radio"]
+				margin-right: 0
+				width: unset
+		.size-choice
+			a
+				display: inline-block
+				padding: 3px 5px
+				+fs(12rem)
+				// +bor-rad(3px)
+				margin-right: 5px
+				margin-bottom: 5px
+				color: $main
+				border: 1px solid darken($white,10%)
+				&:hover
+					color: $main
+				&.active
+					background: $main
+					color: $white 
+					border-color: $main
+	.btn-choose
+		padding: 15px 0
+		text-align: center
+		color: $white
+		background: $main
+		text-transform: uppercase
+		display: block
+		&:hover
+			background: lighten($main,10%)
+.fancybox-slide--current
+	.popup-sizechart
+		+transform(scale3d(1,1,1))
+// END FANCY BOX
+
+// ECOMERCE
+.input-number
+	display: inline-block
+	border: 1px solid darken($white,10%)
+	// background: darken($white,2%)
+	// +bor-rad(50px)
+	&:after
+		content: ''
+		display: table
+		width: 100%
+		clear: both
+	.btn-spin
+		width: 26px
+		height: 38px
+		+fs(18rem)
+		line-height: 38px
+		text-align: center
+		font-weight: 600
+		cursor: pointer
+		float: left
+	input 
+		margin: 0
+		padding: 0
+		float: left
+		border: none
+		line-height: 38px
+		width: 38px
+		text-align: center
+		+fs(18rem)
+		font-weight: 700
+		background: none
+		color: darken($white,60%)
+// .input-number
+// 	+pos(rel,null)
+// 	width: 90px
+// 	.btn-spin
+// 		+pos(abs,0 null null null)
+// 		width: 30px
+// 		height: 30px
+// 		line-height: 30px
+// 		text-align: center
+// 		cursor: pointer
+// 		&.btn-dec
+// 			left: 0
+// 		&.btn-inc
+// 			right: 0
+// 	input
+// 		width: 100%
+// 		border: 1px solid darken($white,10%)
+// 		+bor-rad(5px)
+// 		+fs(17rem)
+// 		font-weight: 700
+// 		color: $black
+// 		text-align: center
+// 		padding: 4px 10px
+
+// REGULAR COMMON
+
+.RadCaptcha
+	margin-bottom: 15px
+	#ctl00_altContent2_ctl01_captcha_ctl01, #ctl00_mainContent_RegisterUser_CreateUserStepContainer_captcha_ctl01, #ctl00_mainContent_login1_LoginCtrl_captcha_ctl01
+		float: left
+		+ p 
+			float: left
+			margin-top: 0
+	span
+		+fs(13rem)
+		color: $red
+		margin-bottom: 5px
+	p
+		margin-top: 5px
+	img
+		display: inline-block!important
+		margin-right: 0.9375rem
+		vertical-align: middle
+	input
+		width: 250px
+	label
+		display: none
+	.rcRefreshImage
+		display: inline-block!important
+		vertical-align: middle
+		position: relative
+		color: transparent
+		width: 30px
+		height: 30px
+		+fs(0)
+		&:after
+			content: '\f021'
+			font-family: "FontAwesome"
+			font-size: 18px
+			color: $black
+			position: absolute
+			top: 50%
+			right: 0
+			left: 0
+			+fs(18rem)
+			+transform(translate(0, -50%))
+	#ctl00_mainContent_ctl03_captcha_ctl01
+		float: left
+		+ p 
+			display: table-cell
+			padding: 7px 0
+			input
+				width: 100%
+
+.ActionMenu
+	z-index: 99999 !important
+	.ActionMenuTag
+		line-height: 1.5
+		.fa
+			color: #1B4D79!important
+			width: auto!important
+			height: auto!important
+			border: none!important
+			font-size: 11px!important
+			display: inline-block!important
+			float: left!important
+			border-radius: 0!important
+			line-height: 1.1rem!important
+			margin-right: 4px!important
+	.ActionMenuBody
+		z-index: 99999 !important
+		> dl dd > a
+			color: #1B4D79!important
+			width: auto!important
+			height: auto!important
+			background: transparent
+			.fa
+				color: #1B4D79!important
+				width: auto!important
+				height: auto!important
+				border: none!important
+				font-size: 11px!important
+				display: inline-block!important
+				float: left!important
+				border-radius: 0!important
+				line-height: 1.1rem!important
+				margin-right: 4px!important
+		> h4
+			color: #333!important
+.cmsadminpanel
+	z-index: 16000009
+.alert
+	display: block
+	margin: 10px 0
+/*Register Form*/
+.subscribe
+	.alert-success
+		font-size: 0.875rem
+		line-height: 1.275rem
+		font-style: italic
+		display: block
+		width: 100%
+		text-align: center
+		color: $red
+		+fs(18rem)
+		border: none
+		background-color: rgba(255, 255, 255, 0.8)
+		padding: 10px
+		margin: 0
+		border-radius: 0
+.subscribefrm
+	position: relative
+	.fa.fa-exclamation-triangle
+		color: red
+		+fs(15rem)
+		display: block
+		position: absolute
+		top: 10px
+		right: 15px
+		text-indent: -9999px
+		width: 15px
+		height: 15px
+		line-height: 15px
+		text-align: center
+		&:after
+			content: '\f071'
+			font-size: 12px
+			color: red
+			text-indent: 0
+			float: left
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			left: 0
+		@media only screen and (min-width: 1024px)
+			right: 70px
+			top: 13px
+	.fa-exclamation-triangle:before, .fa-warning:before
+		margin-right: 5px
+.form-group
+	position: relative
+	// .fa.fa-exclamation-triangle
+	// 	position: absolute
+	// 	top: 15px
+	// 	right: 15px
+	// 	color: transparent
+	// 	width: 15px
+	// 	height: 15px
+	// 	&:before
+	// 		content: '\f071'
+	// 		font-size: 12px
+	// 		font-weight: 500
+	// 		color: red
+	// 		position: absolute
+	// .fa-exclamation-triangle:before, .fa-warning:before
+	// 	margin-right: 5px
+.contact-form
+	.form-group
+		.fa.fa-exclamation-triangle
+			top: 50px
+			+fs(18rem)
+
+.hidden
+	display: none
+	
+.share
+	text-align: left
+	clear: both
+	&.sc-right
+		text-align: right
+	.face-like
+		width: auto
+		display: inline-block
+	> div, .face-like, .fb-share-button, .google
+		display: inline-block
+		margin-bottom: 5px
+		margin-right: 5px
+		vertical-align: top
+	.google, .tweet
+		width: 60px
+	.fb-share-button.fb_iframe_widget iframe, iframe.twitter-share-button
+		display: block
+	.google
+		margin-top: -5px
+
+// **********SEARCH-PAGE**********
+.searchresults 
+	.pagination
+		display: none
+	.altcontent1
+		display: none
+	.pagination
+		text-align: left
+	.banner-home
+		display: none
+	.product-page
+		width: 100%
+		.product-list
+			.col-xs-12
+				padding: 0
+				width: 20%
+				+media-breakpoint-down(lg)
+					width: 20%
+				+media-breakpoint-down(md)
+					width: 25%
+				+media-breakpoint-down(sm)
+					width: 33.33%
+				+media-breakpoint-down(xs)
+					width: 50%
+.search-page
+	margin: 40px 0
+	.searchresultsummary
+		display: none
+	.page-header
+		border: none
+		padding: 0
+		margin: 0
+	h1
+		font-size: 21px
+		font-weight: 700
+		margin: 0 0 15px
+		text-transform: none
+		line-height: 1.5em
+		color: $black
+		display: inline-block
+	.btnSearchWrap
+		position: relative
+		.btnSearch
+			@include opacity(1)
+			position: absolute
+			top: 0
+			left: 0
+			text-align: center
+			bottom: 0
+			width: 34px
+			.fa
+				position: absolute
+				right: 0
+				display: block
+				top: 0
+				bottom: 0
+				left: 0
+				margin: 0 auto
+				width: 34px
+				height: 34px
+				line-height: 34px
+				border: 1px solid darken($white, 15%)
+				vertical-align: middle
+		.seachpage-btn
+			position: relative
+			height: 34px
+			width: 34px
+			@include opacity(0)
+	.btn
+		background-color: $blue
+		color: $white
+		border: none
+		+transition(all,.3s)
+		&:hover,  &:focus
+			background-color: darken($blue,5%)
+	.searchsummary
+		margin: 10px 0 25px
+		display: none
+		strong
+			color: $black
+	.searchcontrols
+		margin-bottom: 30px
+		input[type="text"]
+			height: 35px
+			line-height: 35px
+			padding: 0 15px
+			border: 1px solid darken($white, 15%)
+			font-size: 0.9375rem
+			color: $black
+			@include border-radius(0)
+		input[type="submit"]
+			border: none
+			height: 35px
+			+bor-rad(0)
+			line-height: 35px
+			text-align: center
+			padding: 0 20px
+			color: $white
+			background-color: $pink
+			&:hover
+				background: darken($pink,5%)
+	.searchresultlist
+		margin-top: 20px
+	.searchresult
+		border-bottom: 1px solid darken($white, 15%)
+		margin: 0 0 15px
+		padding: 0 0 15px
+		h3
+			font-size: 16px
+			font-weight: 600
+			margin: 0 0 10px
+			color: $black
+			a
+				color: $blue
+				text-decoration: none
+				&:hover
+					color: $red
+	hr
+		display: none
+
+
+// SEARCH SUGGEST
+.suggestsearch
+	position: absolute!important
+	top: calc(100% + 3px)
+	left: 0
+	width: 100%
+	z-index: 401
+	background: $white
+	box-shadow: 0 3px 30px color-rgba($black,0.2)
+	ul 
+		margin: 0
+		padding: 0
+		li 
+			list-style: none
+			display: block
+			border-bottom: 1px dotted darken($white, 10%)
+			&:before, &:after
+				content: ''
+				display: table
+				width: 100%
+				clear: both
+			&:hover,
+			&.selected 
+				background: darken($white, 10%)
+			
+			&.prdlist_icon 
+				margin-bottom: 0
+				height: auto
+			.product-img
+				width: 70px
+				height: 70px
+				overflow: hidden
+				display: flex
+				justify-content: center
+				align-content: center
+				float: left
+				background: $white
+				border: 1px solid darken($white,10%)
+				img 
+					max-height: 100%
+					max-width: 100%
+			.prd-info
+				width: calc(100% - 70px)
+				padding: 10px
+				float: left
+			a 
+				padding: 10px
+				display: block
+				.prd-info 
+					text-align: left
+					padding: 0 10px
+					h3,
+					h4 
+						+fs(13rem)
+						color: darken($white,40%)
+						margin: 0
+						line-height: 1.5
+					
+					h3 
+						+fs(15rem)
+						color: $pink
+						font-weight: 500
+					span 
+						display: block
+						&.price 
+							color: $black
+						&.price_original 
+							color: $black
+							text-decoration: line-through
+
+
+#map 
+	iframe
+		pointer-events: none
+		&.active
+			pointer-events: all

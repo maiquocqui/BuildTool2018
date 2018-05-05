@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese')
+
+body
+	font-family: 'Roboto', sans-serif
+	font-size: 16px
+	line-height: 1.5
+	background: $white
+	width: 100%
+	*
+		line-height: inherit
+html
+	overflow: auto
+
+.fullpage
+	max-width: 1920px
+	background: $white
+	margin: 0 auto
+	overflow: hidden
+	// box-shadow: 0px 0px 20px color-rgba($black,0.1)
+
+main
+	&.small
+		font-size: 100% !important
+	&.medium
+		font-size: 125% !important
+	&.big
+		font-size: 150% !important
+
+.container
+	+pos(static,unset)
+	+media-breakpoint-up(xl)
+		max-width: 1240px
+		width: 100%
+	+media-breakpoint-down(md)
+		max-width: 100%
+		width: 100%
+		padding: 0px 30px
+	&.full-width
+		+media-breakpoint-up(xl)
+			max-width: 1920px
+			width: 100%
+			padding: 0px 60px
+
+
+.content
+	// font-family: 'Montserrat', sans-serif
+	+fs(15rem)
+	line-height: 1.8
+	color: darken($white,60%)
+	.row
+		margin: 0px -10px
+		.col-12
+			padding: 0px 10px
+	.quote
+		background: darken($white,5%)
+		+bor-rad(10px)
+		padding: 15px 20px 30px
+		margin: 15px 0
+		+pos(rel,null)
+		&:before
+			content: '\f10d'
+			display: block
+			+fs(32rem)
+			color: darken($white,60%)
+			margin-bottom: 5px
+		&:after
+			content: '\f10e'
+			display: block
+			+fs(32rem)
+			color: darken($white,60%)
+			+pos(abs, null 20px 10px null)
+		.author
+			font-weight: 700
+			&:before
+				content: ''
+				display: inline-block
+				vertical-align: middle
+				width: 20px
+				height: 1px
+				background: darken($white,60%)
+	.img-100
+		width: 100%
+	ul, ol, p, h1, h2, h3, h4, h5, h6, img, figure
+		margin-bottom: 15px
+		line-height: inherit
+		font-weight: inherit
+		+media-breakpoint-down(xs)
+			margin-bottom: 10px
+		// &:last-child
+		// 	margin-bottom: 0
+	figure
+		margin: 0 auto 15px
+		text-align: center
+		+media-breakpoint-down(xs)
+			margin-bottom: 10px
+		img
+			margin-bottom: 5px
+		figcaption
+			// background: darken($white,5%)
+			padding: 5px 0
+			text-align: center
+			+fs(13rem)
+			font-style: italic
+			color: darken($white,60%)
+	ul 
+		padding-left: 20px
+		list-style-type: disc
+	h5
+		+fs(16rem)
+	h4
+		+fs(18rem)
+	h3
+		+fs(24rem)
+	h2
+		+fs(28rem)
+	strong 
+		font-weight: 600
+	.material-icons
+		vertical-align: middle
+.text-green
+	color: $green
+.text-orange
+	color: $orange
+
+.row
+	// margin: 0px -10px
+	&.no-gutters
+		margin: 0px !important
+		[class*="col-"]
+			padding: 0px !important
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl
+	+transition(all,0.3s)
+	+pos(static,null)
+	// padding: 0px 10px
+.col-12
+	width: 100%
+
+a
+	color: inherit
+	+transition(all,0.3s)
+	&:hover
+		color: inherit
+		text-decoration: none
+
+*
+	line-height: 1.5
+	// +transition(all,0.3s)
+	&:hover, &:active, &:focus
+		outline: none
+	&:before, &:after
+		font-family: 'fontawesome'
+.lnr
+	font-family: 'linearicons-free'
+	&:before, &:after
+		font-family: 'linearicons-free'
+.material-icons
+	line-height: 1
+button
+	background: none
+	padding: 0
+	margin: 0
+	border: none
+	&:focus
+		border: none
+		outline: none
+
+table
+	width: 100%
+
+img, iframe
+	vertical-align: middle
+
+.text-xs
+	+fz(.8rem)
+.text-sm
+	+fz(.9rem)
+.text-md
+	+fz(1.2rem)
+.text-lg
+	+fz(1.4rem)
+.text-xl
+	+fz(1.8rem)
+.text-xxl
+	+fz(2.2rem)
+.text-shadown
+	+text-shadow(#{1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd})
+
+.text-bold
+	+fw(bold)
+.text-400
+	+fw(400)
+.text-500
+	+fw(500)
+.text-600
+	+fw(600)
+.text-700
+	+fw(700)

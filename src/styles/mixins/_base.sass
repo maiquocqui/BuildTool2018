@@ -1,0 +1,73 @@
+// // Set Link Hover
+=link ($link, $hover:$link, $active:$link, $visit:$link)
+	color: #{$link}
+	&:visited
+		color: #{$visit}
+	&:hover
+		color: #{$hover}
+	&:active, &:focus , &.active, &.activated
+		color: #{$active}
+
+// Set bg hover
+=bg ($link, $hover:$link, $active:$link)
+	@if $link != "none"
+		background-color: #{$link}
+		&:hover
+			background-color: #{$hover}
+		&:active, &:focus , &.active, &.activated
+			background-color: #{$active}
+	@else
+		background: none
+		&:hover
+			background-color: #{$hover}
+		&:active, &:focus , &.active, &.activated
+			background-color: #{$active}
+
+// Animate
+@keyframes hotline-animate
+	0%
+		+transform(scale3d(1.3,1.3,1.3))
+		opacity: 0.5
+	100%
+		+transform(scale3d(2.0,2.0,2.0))
+		opacity: 0
+@keyframes phone-ring
+	0%
+		transform: rotate(0deg) scale(1) skew(1deg)
+	5%
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	10%
+		transform: rotate(25deg) scale(1) skew(1deg)
+	15%
+		transform: rotate(-25deg) scale(1) skew(1deg)
+	20%
+		transform: rotate(25deg) scale(1) skew(1deg)
+	25%
+		transform: rotate(0deg) scale(1) skew(1deg)
+	100%
+		transform: rotate(0deg) scale(1) skew(1deg)
+
+// Flexbox
+=flexbox
+	display: -webkit-box
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flexbox
+	display: flex
+
+// Font size px to rem
+=fs($size)
+	font-size: ($size / 16)
+
+=mainbutton()
+	display: inline-block
+	text-transform: uppercase
+	font-weight: 600
+	color: $white
+	+bor-rad(5px)
+	background: $maingradient
+	border: none
+	+transition(all,0.5s)
+	&:hover
+		filter: brightness(110%)
+		box-shadow: 0px 10px 20px -10px $green

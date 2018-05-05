@@ -1,0 +1,17 @@
+#scrollUp
+	+fs(0)
+	width: 40px
+	height: 40px
+	line-height: 40px
+	text-align: center
+	background: darken($white,40%)
+	color: $white
+	right: 20px
+	bottom: 20px
+	+media-breakpoint-down(lg)
+		// bottom: 110px
+	&:before
+		content: '\f106'
+		+fs(18rem)
+	&:hover
+		background: darken($white,60%)

@@ -1,0 +1,184 @@
+.home-title
+	+fs(32rem)
+	line-height: 1.3
+	font-weight: 700
+	margin-bottom: 40px
+	+media-breakpoint-down(md)
+		margin-bottom: 30px
+	+media-breakpoint-down(xs)
+		+fs(24rem)
+		text-align: left
+		margin-bottom: 20px
+.class-test
+	display: concac
+.home-banner
+	padding: 80px 0 0
+	text-align: center
+	border-bottom: 1px solid darken($white,8%)
+	+media-breakpoint-down(md)
+		padding: 60px 0
+	+media-breakpoint-down(xs)
+		padding: 40px 0px 0
+		text-align: left
+	.banner-caption
+		+fs(32rem)
+		line-height: 1.3
+		font-weight: 700
+		width: 750px
+		margin: 0 auto 30px
+		+media-breakpoint-down(md)
+			width: 100%
+		+media-breakpoint-down(xs)
+			+fs(24rem)
+			margin-bottom: 20px
+	.banner-content
+		width: 800px
+		margin: 0 auto 30px
+		font-weight: 500
+		color: darken($white,60%)
+		+media-breakpoint-down(md)
+			width: 100%
+		+media-breakpoint-down(xs)
+			+fs(15rem)
+	.btn-wrap
+		text-align: center
+		margin-bottom: 40px
+	.banner-img
+		text-align: center
+		margin-bottom: -80px
+		+pos(rel,null)
+		z-index: 3
+		+media-breakpoint-down(lg)
+			margin-bottom: -60px
+		+media-breakpoint-down(md)
+			margin-bottom: 0
+
+.home-product
+	background: darken($white,2%)
+	padding: 80px 0
+	border-bottom: 1px solid darken($white,8%)
+	+media-breakpoint-down(lg)
+		padding: 60px 0
+	&.s2
+		background: $white
+		+media-breakpoint-up(lg)
+			.text
+				order: 2
+			.img
+				order: 1
+	.product-intro
+		padding: 30px 0px
+		height: 100%
+		+flexbox
+		flex-wrap: wrap
+		align-items: center
+		align-content: center
+		+media-breakpoint-down(md)
+			padding: 0
+			margin-bottom: 40px
+		.product-title
+			width: 100%
+			+fs(36rem)
+			line-height: 1.3
+			font-weight: 700
+			margin: 0
+			+media-breakpoint-down(xs)
+				+fs(24rem)
+			&.s2
+				margin-bottom: 30px
+				+media-breakpoint-down(xs)
+					margin-bottom: 20px
+		.product-des
+			width: 100%
+			+fs(18rem)
+			font-weight: 500
+			font-style: italic
+			color: darken($white,60%)
+			margin-bottom: 30px
+			+media-breakpoint-down(xs)
+				+fs(14rem)
+				font-weight: 600
+				margin-bottom: 20px
+		.product-content
+			width: 100%
+			+fs(15rem)
+			color: $main
+			margin-bottom: 30px
+		.product-feature
+			width: 100%
+			margin-bottom: 20px
+			+media-breakpoint-down(md)
+				margin-bottom: 0
+			.feature
+				margin-bottom: 30px
+				figure
+					+flexbox
+					align-items: center
+					align-content: center
+					.feature-icon
+						width: 64px
+						height: 64px
+						+flexbox
+						align-items: center
+						align-content: center
+						img
+							max-width: 100%
+							max-height: 100%
+					figcaption
+						width: calc(100% - 64px)
+						padding-left: 20px
+						+fs(15rem)
+						line-height: 1.3
+		.product-link
+			width: 100%
+			a
+				+fs(16rem)
+				font-weight: 500
+				color: $blue
+				padding: 3px 0
+				border-bottom: 1px solid $blue
+				&:after
+					content: '\f105'
+					margin-left: 5px
+				&:hover
+					letter-spacing: 1px
+					color: $pink
+					border-bottom-color: $pink
+	.product-img
+		height: 100%
+		+flexbox
+		justify-content: center
+		align-items: center
+		align-content: center
+
+.home-contact
+	padding: 60px 0
+	background: $blue
+	+media-breakpoint-down(md)
+		padding: 40px 0
+	.contact-wrap
+		+flexbox
+		justify-content: space-between
+		+media-breakpoint-down(md)
+			flex-wrap: wrap
+	.contact-intro
+		font-weight: 400
+		+fs(16rem)
+		color: $white
+		width: 800px
+		+media-breakpoint-down(lg)
+			width: calc(100% - 200px)
+		+media-breakpoint-down(md)
+			width: 100%
+			line-height: 1.8
+			margin-bottom: 20px
+			padding: 0px 60px
+			text-align: center
+		+media-breakpoint-down(xs)
+			padding: 0
+			+fs(15rem)
+			text-align: left
+	.btn-wrap
+		+media-breakpoint-down(md)
+			text-align: center
+			width: 100%

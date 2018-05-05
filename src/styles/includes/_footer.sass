@@ -1,0 +1,32 @@
+footer
+	background: darken($white,5%)
+	.footer-wrap
+		+flexbox
+		justify-content: space-between
+		align-items: center
+		align-content: center
+		flex-wrap: wrap
+		height: 80px
+		+media-breakpoint-down(xs)
+			flex-wrap: wrap
+			height: 100px
+	.footer-nav
+		+flexbox
+		+media-breakpoint-down(xs)
+			width: 100%
+			margin-bottom: 10px
+		a
+			+fs(13rem)
+			font-weight: 500
+			color: darken($white,60%)
+			+ a
+				margin-left: 30px
+			&:hover
+				color: $blue
+	.copyright
+		+fs(13rem)
+		font-weight: 500
+		color: darken($white,60%)
+		+media-breakpoint-down(xs)
+			width: 100%
+			text-align: center

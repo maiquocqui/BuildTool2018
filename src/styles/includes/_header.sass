@@ -1,0 +1,38 @@
+header
+	background: $blue
+	.header-wrap
+		+pos(rel,null)
+		+flexbox
+		flex-wrap: wrap
+		justify-content: space-between
+	.sitelogo
+		+flexbox
+		justify-content: center
+		align-items: center
+		height: 100px
+		a
+			display: block
+		img
+			height: 70px
+	.col-right
+		+flexbox
+		align-items: center
+		align-content: center
+	.btn-showmenu
+		display: none
+	.overlay
+		display: none
+	.menu
+		ul.menu-link
+			li
+				a
+					+fs(17rem)
+					color: $white
+					line-height: 20px
+					padding: 10px 30px
+	.language
+	.search
+		.search-toggle
+			color: $white
+
+

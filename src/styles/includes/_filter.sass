@@ -1,0 +1,386 @@
+.btn-togglewrap
+	+pos(fix, null 0 0 0)
+	z-index: 50
+	+flexbox
+	background: $white
+	border-top: 1px solid darken($white,15%)
+	.btn-showcate, .btn-showfilter
+		text-align: center
+		line-height: 40px
+		padding: 0px
+		width: 100%
+		&.active
+			background: darken($white,5%)
+	.btn-showcate
+		&:before
+			content: '\f00b'
+			font-family: 'fontawesome'
+			margin-right: 10px
+			line-height: 1
+			// +fs(18rem)
+			display: inline-block
+			vertical-align: middle
+			+media-breakpoint-down(xs)
+				// +fs(15rem)
+				margin-right: 5px
+	.btn-showfilter
+		border-left: 1px solid darken($white,15%)
+		&:before
+			content: '\f013'
+			font-family: 'fontawesome'
+			margin-right: 10px
+			line-height: 1
+			// +fs(18rem)
+			display: inline-block
+			vertical-align: middle
+			+media-breakpoint-down(xs)
+				// +fs(15rem)
+				margin-right: 5px
+.btn-closefilter
+	+pos(abs, 30px 30px null null)
+	+fs(24rem)
+	color: $main
+	+transition(all,0.3s)
+	line-height: 1
+	display: none
+	&:hover
+		color: $green
+	+media-breakpoint-down(md)
+		// display: block
+	+media-breakpoint-down(sm)
+		top: 15px
+		right: 15px
+	+media-breakpoint-down(xs)
+	&.btn-close
+		+pos(static,unset)
+		border: 1px solid lighten($red,40%)
+		background: lighten($red,48%)
+		+fs(14rem)
+		text-align: center
+		padding: 8px 0
+		+bor-rad(3px)
+		color: $red
+		+media-breakpoint-down(md)
+			display: block
+		&:hover
+			color: $green
+			border-color: $green
+			background: lighten($green,45%)
+.filter-col
+.filter-wrap
+	margin-bottom: 20px
+	+media-breakpoint-down(md)
+		margin: 0
+		
+		+pos(fix, 60px null 41px 0)
+		z-index: 70
+		right: 0
+		background: $white
+		overflow: auto
+		padding: 30px 200px
+		+transform(translateY(-130%))
+		+transition(all,0.5s)
+		// opacity: 0
+		visibility: hidden
+		&.open
+			+transform(translateY(0%))
+			// opacity: 1
+			visibility: visible
+	+media-breakpoint-down(sm)
+		padding: 30px 100px
+	+media-breakpoint-down(xs)
+		padding: 15px
+	.filter-group
+		margin-bottom: 30px
+		&:before, &:after
+			content: ''
+			display: table
+			width: 100%
+			clear: both
+		.btn-reset
+			+pos(abs, 0px 0px null null)
+			width: 24px
+			display: none
+			background: $white
+			height: 24px
+			line-height: 24px
+			+fs(10rem)
+			z-index: 2
+			text-align: center
+			cursor: pointer
+			+transition(all,0.3s)
+			color: darken($white,40%)
+			&:hover
+				color: $green
+	.filter-title
+		color: $main
+		+pos(rel,null)
+		margin-bottom: 15px
+		// &:after
+		// 	content: ''
+		// 	height: 2px
+		// 	+pos(abs, 50% 0 null 0)
+		// 	background: darken($white,10%)
+		span 
+			display: inline-block
+			text-transform: uppercase
+			+fs(13rem)
+			font-weight: 700
+			+pos(rel,null)
+			z-index: 1
+			background: $white
+			padding-right: 10px
+	&.category-group
+		.filter-group
+			background: $white
+		.filter-title
+			background: $maingradient
+			+bor-rad(5px 5px 0 0)
+			margin-bottom: 0
+			margin-bottom: 1px
+			span
+				color: $white
+				font-weight: 600
+				background: none
+				padding: 8px 15px
+		.filter-option
+			+bor-rad(0 0 5px 5px)
+			padding: 0
+			border: 1px solid darken($white,10%)
+		
+	.filter-option
+		+bor-rad(5px)
+		padding: 20px
+		border: 1px solid darken($white,10%)
+		&.option-tag
+			padding: 0
+			border: none
+	.filter-category
+		> ul 
+			> li 
+				+pos(rel,null)
+				&:last-child
+					> a
+						border-bottom: none
+				> a 
+					display: block
+					color: $main
+					+fs(13rem)
+					line-height: 20px
+					font-weight: 600
+					+pos(rel,null)
+					padding: 10px 20px
+					border-bottom: 1px solid darken($white,10%)
+					&:after
+						content: ''
+						+pos(abs, -1px -1px -1px null)
+						width: 5px
+						background: $green
+						opacity: 0
+						visibility: hidden
+						+transition(all,0.5s)
+				.btn-showsubfilter
+					+pos(abs, 0px 10px null null)
+					width: 30px
+					text-align: center
+					height: 30px
+					line-height: 40px
+					text-align: center
+					cursor: pointer
+				.sub
+					display: none
+					background: darken($white,2%)
+					ul
+						li 
+							border-bottom: 1px solid darken($white,10%)
+							a
+								+fs(13rem)
+								color: darken($white,60%)
+								font-weight: 500
+								line-height: 20px
+								padding: 5px 20px
+								display: block
+							&.active
+								a
+									color: $green
+									font-weight: 600
+				&:hover
+					> a 
+						color: $green
+				&.active
+					> a 
+						color: $green
+						&:after
+							opacity: 1
+							visibility: visible
+					.sub
+						display: block
+	.filter-ajax
+		&::-webkit-scrollbar-track
+			background-color: darken($white,10%)
+		&::-webkit-scrollbar
+			width: 3px
+			background-color: darken($white,10%)
+		&::-webkit-scrollbar-thumb
+			background-color: darken($white,40%)
+		> ul 
+			+flexbox
+			flex-wrap: wrap
+			> li 
+				margin-right: 10px
+				margin-bottom: 10px
+				> a 
+					display: block
+					+fs(12rem)
+					color: darken($white,60%)
+					padding: 2px 15px
+					+bor-rad(5px)
+					border: 2px solid darken($white,10%)
+					font-weight: 500
+					box-sizing: border-box
+					&:hover
+						border-color: $green
+					&.active
+						background: $maingradient
+						color: $white
+						border: none
+						padding: 4px 17px
+		&.brand-category
+			> ul
+				> li
+					> a
+						// text-transform: capitalize
+	.product-size
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		.size, li
+			margin-right: 15px
+			margin-bottom: 15px
+			a 
+				display: block
+				font-weight: 600
+				color: darken($white,40%)
+				+fs(14rem)
+				&:hover
+					color: $orange
+				&.active
+					color: $orange
+					font-weight: 800
+	.color-picker
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+		// margin: 0 -10px
+		.color
+			width: 100%
+			// width: 50%
+			// padding: 0px 10px
+			a
+				+flexbox
+				padding: 7px 0
+				.color-img
+					width: 14px
+					height: 14px
+					+bor-rad(50px)
+					+pos(rel,null)
+					border: 1px solid darken($white,10%)
+				.color-name
+					+fs(14rem)
+					font-weight: 600
+					line-height: 14px
+					margin-left: 10px
+					color: darken($white,40%)
+				&:hover
+					.color-name
+						color: lighten($green,20%)
+				&.active
+					.color-img
+						border-color: lighten($green,20%)
+					.color-name
+						color: lighten($green,20%)
+						font-weight: 700
+	.price-select
+		+pos(rel,null)
+		&:before
+			content: ''
+			+pos(abs, null 0 0 0)
+			height: 3px
+			background: $maingradient
+		select
+			padding: 10px 0
+			width: 100%
+			+fs(14rem)
+			font-weight: 500
+			color: darken($white,60%)
+			+bor-rad(0px)
+			border: none
+	.filter-range
+		// width: 100%
+		margin: 0px 10px
+		+pos(rel,null)
+		&:before, &:after
+			content: ''
+			display: table
+			width: 100%
+			clear: both
+		#slider-range
+			width: 100%
+			height: 4px
+			background: darken($white,10%)
+			margin: 15px 0 15px
+			+pos(rel,null)
+			+transition(all,0s)
+		.ui-widget-header
+			background: $orange
+			position: absolute
+			z-index: 1
+			display: block
+			top: 0px
+			height: 4px
+			+transition(all,0s)
+		.ui-slider-handle
+			position: absolute
+			z-index: 2
+			cursor: default
+			touch-action: none
+			top: 2px
+			margin-left: -0.6em
+			left: 15%
+			width: 14px
+			height: 14px
+			+bor-rad(50%)
+			background: $white
+			border: 2px solid $orange
+			z-index: 1
+			cursor: pointer
+			+transition(all,0s)
+			+transform(translateY(-50%))
+			&:hover
+				background: $orange
+		.min, .max
+			width: 16px
+			height: 16px
+			background: darken($white,60%)
+			box-shadow: 0px 0px 5px -1px rgba(0,0,0,.7)
+			z-index: 1
+			cursor: pointer
+			+transition(all,0.5s)
+			+transform(translateY(-50%))
+			&:hover
+				background: $main
+		.min
+			+pos(abs, 50% null null 0)
+		.max 
+			+pos(abs, 50% 0 null null)
+	.price-range
+		// text-transform: uppercase
+		+fs(13rem)
+		// font-weight: bold
+		margin-left: -10px
+	.min-input, .max-input
+		display: inline-block
+		margin: 0 5px
+		font-weight: bold
+		+fs(14rem)
+		color: $orange
