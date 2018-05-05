@@ -1,8 +1,8 @@
 @echo off
 ECHO =====================================
-ECHO Welcome to the Web-App.
-ECHO Copyright 2016
-ECHO Build by Bao Nguyen
+ECHO Welcome to the Front-end Build Tool.
+ECHO Copyright 2018
+ECHO Build by Mai Quoc Qui
 ECHO =====================================
 ECHO Are You ready to install?!?
 Pause
