@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    $('main').html("<h1>test 7686script reload123123456</h1>");
+    $('main').html("<h1 class='alert alert success'>test script reload successful</h1>");
 });
