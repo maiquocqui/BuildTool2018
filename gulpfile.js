@@ -7,6 +7,7 @@ var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
+var image = require('gulp-image');
 
 // Browser Sync
 
@@ -70,7 +71,7 @@ gulp.task('sass', function() {
 });
 
 // Task JS
-const through = require('through2');
+var through = require('through2');
 
 function logFileHelpers() {
     return through.obj((file, enc, cb) => {
@@ -92,12 +93,18 @@ gulp.task('js', () =>
 gulp.task('fonts', function() {
     gulp.src('./src/fonts/**/*.*')
         .pipe(gulp.dest('./dist/fonts'))
-        .pipe(browserSync.stream())
 });
 
 // Task copy img
 gulp.task('img', function() {
     gulp.src('./src/img/**/*.*')
+        .pipe(gulp.dest('./dist/img'))
+});
+
+// Task img compress
+gulp.task('image', function() {
+    gulp.src('./src/img/**/*.*')
+        .pipe(image())
         .pipe(gulp.dest('./dist/img'))
         .pipe(browserSync.stream())
 });
@@ -115,7 +122,8 @@ gulp.task('watch', function() {
     gulp.watch('./src/styles/**/*.{scss,sass}', ['sass']);
     gulp.watch('./src/templates/**/*.{pug,jade}', ['pug']);
     gulp.watch('./src/script/**/*.js', ['js']);
-    gulp.watch('./src/img/**/*.*', ['img']);
+    gulp.watch('./src/fonts/**/*.*', ['fonts']).on('change', browserSync.reload);
+    gulp.watch('./src/img/**/*.*', ['img']).on('change', browserSync.reload);
     gulp.watch('gulpfile.js', ['concat-js', 'concat-css']).on('change', browserSync.reload);
 
 }).on('end', browserSync.reload);
