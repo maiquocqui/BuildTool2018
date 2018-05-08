@@ -1,5 +1,5 @@
 "use strict";
 
 $(document).ready(function () {
-    $('main').html("<h1>test 7686script reload123123456</h1>");
+    $('main').html("<h1 class='alert alert info'>test script reload info</h1>");
 });
