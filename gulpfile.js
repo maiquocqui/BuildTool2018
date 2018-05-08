@@ -67,8 +67,8 @@ gulp.task('sass', function() {
     return gulp.src('src/styles/main.sass')
         .pipe(sourcemaps.init())
         .pipe(gulpSass().on('error', gulpSass.logError))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'))
-        .pipe(sourcemaps.write('./dist/css'))
         .pipe(browserSync.stream());
 });
 
