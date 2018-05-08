@@ -24,8 +24,10 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-image": "^4.3.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^4.3.11",
     "run-sequence": "^2.2.1"
   },

@@ -7,20 +7,21 @@ var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
+var image = require('gulp-image');
 
 // Browser Sync
 
 // ConCat
 gulp.task('concat-js', function() {
     return gulp.src([
-            "bower_components/jquery/dist/jquery.js",
             "bower_components/popper/popper.min.js",
             "bower_components/bootstrap/dist/js/bootstrap.js",
             "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js",
             "bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.vi.min.js",
             "bower_components/slick-carousel/slick/slick.js",
             "bower_components/fancybox/dist/jquery.fancybox.js",
-            "bower_components/jquery-countimator-master/dist/js/jquery.countimator.js",
+            "bower_components/jquery-countimator/dist/js/jquery.countimator.js",
             "bower_components/jquery.countdown/dist/jquery.countdown.js",
             "bower_components/wow/dist/wow.js",
             "bower_components/ScrollToFixed/jquery-scrolltofixed.js",
@@ -52,25 +53,27 @@ gulp.task('concat-css', function() {
 // Task PUG
 gulp.task('pug', function buildHTML() {
     return gulp.src([
-            './src/templates/*.{pug,jade}'
+            'src/templates/*.pug'
         ])
         .pipe(gulpPug({
             pretty: true
         }))
         .pipe(gulp.dest('./dist'))
-        .pipe(browserSync.stream())
+        .pipe(browserSync.stream({ match: '**/*.html' }))
 });
 
 // Task SASS
 gulp.task('sass', function() {
-    return gulp.src('./src/styles/**/*.{scss,sass}')
+    return gulp.src('src/styles/main.sass')
+        .pipe(sourcemaps.init())
         .pipe(gulpSass().on('error', gulpSass.logError))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream());
 });
 
 // Task JS
-const through = require('through2');
+var through = require('through2');
 
 function logFileHelpers() {
     return through.obj((file, enc, cb) => {
@@ -79,7 +82,7 @@ function logFileHelpers() {
     });
 }
 gulp.task('js', () =>
-    gulp.src('./src/script/**/*.js')
+    gulp.src('src/scripts/**/*.js')
     .pipe(babel({
         presets: ['env']
     }))
@@ -90,14 +93,20 @@ gulp.task('js', () =>
 
 // Task copy font
 gulp.task('fonts', function() {
-    gulp.src('./src/fonts/**/*.*')
+    gulp.src('src/fonts/**/*.*')
         .pipe(gulp.dest('./dist/fonts'))
-        .pipe(browserSync.stream())
 });
 
 // Task copy img
 gulp.task('img', function() {
-    gulp.src('./src/img/**/*.*')
+    gulp.src('src/img/**/*.*')
+        .pipe(gulp.dest('./dist/img'))
+});
+
+// Task img compress
+gulp.task('image', function() {
+    gulp.src('src/img/**/*.*')
+        .pipe(image())
         .pipe(gulp.dest('./dist/img'))
         .pipe(browserSync.stream())
 });
@@ -106,18 +115,18 @@ gulp.task('img', function() {
 gulp.task('serve', function() {
     browserSync.init({
         server: "./dist",
-        port: 8000
+        port: 8087
     });
 });
 
 // Task Theo doi
 gulp.task('watch', function() {
-    gulp.watch('./src/styles/**/*.{scss,sass}', ['sass']);
-    gulp.watch('./src/templates/**/*.{pug,jade}', ['pug']);
-    gulp.watch('./src/script/**/*.js', ['js']);
-    gulp.watch('./src/img/**/*.*', ['img']);
-    gulp.watch('gulpfile.js', ['concat-js', 'concat-css']).on('change', browserSync.reload);
-
+    gulp.watch('src/styles/**/*.sass', ['sass']);
+    gulp.watch('src/templates/**/*.pug', ['pug']);
+    gulp.watch('src/scripts/**/*.js', ['js']);
+    gulp.watch('src/fonts/**/*.*', ['fonts']).on('change', browserSync.reload);
+    gulp.watch('src/img/**/*.*', ['img']).on('change', browserSync.reload);
+    gulp.watch('dist/*.html').on('change', browserSync.reload);
 }).on('end', browserSync.reload);
 
 // Task ông nội
