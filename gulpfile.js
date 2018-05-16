@@ -9,7 +9,7 @@ var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
-var sitePort = 8028;
+var sitePort = 8138;
 // Browser Sync
 
 // ConCat
@@ -36,7 +36,6 @@ gulp.task('concat-js', function() {
 });
 gulp.task('concat-css', function() {
     return gulp.src([
-            "bower_components/bootstrap/dist/css/bootstrap.css",
             "bower_components/fancybox/dist/jquery.fancybox.css",
             "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css",
             "bower_components/hover/css/hover.css",
